@@ -1,0 +1,12 @@
+---
+  - name: edit /etc/chrony/chrony.conf
+    lineinfile:
+      path: /etc/chrony/chrony.conf
+      regexp: '^pool 2.debian.pool.ntp.org offline iburst'
+      line: 'server 129.6.15.28 iburst'
+    notify:
+      - restart chrony
+    sudo: yes
+
+
+
